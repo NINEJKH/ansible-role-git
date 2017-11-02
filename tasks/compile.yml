@@ -1,0 +1,44 @@
+---
+
+- name: install dependencies
+  apt:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
+    cache_valid_time: 3600
+  with_items:
+    - libcurl4-openssl-dev
+    - libexpat1-dev
+    - gettext
+    - libz-dev
+    - libssl-dev
+    - build-essential
+  become: yes
+
+- name: clear state
+  file:
+    path: /tmp/git-{{ git_version }}
+    state: absent
+  become: yes
+
+- name: fetch git-scm
+  unarchive:
+    src: https://www.kernel.org/pub/software/scm/git/git-{{ git_version }}.tar.gz
+    dest: /tmp
+    remote_src: True
+
+- name: configure
+  command: ./configure
+  args:
+    chdir: /tmp/git-{{ git_version }}
+
+- name: make
+  command: make prefix=/usr/local all
+  args:
+    chdir: /tmp/git-{{ git_version }}
+
+- name: install
+  command: make prefix=/usr/local install
+  args:
+    chdir: /tmp/git-{{ git_version }} 
+  become: yes
