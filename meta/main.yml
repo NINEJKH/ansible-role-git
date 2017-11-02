@@ -17,4 +17,5 @@ galaxy_info:
         - jessie
   galaxy_tags:
     - development
+    - scm
 dependencies: []
