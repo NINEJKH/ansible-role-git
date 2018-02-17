@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/lifeofguenter/ansible-role-git.svg?branch=master)](https://travis-ci.org/lifeofguenter/ansible-role-git)
+[![Build Status](https://travis-ci.org/NINEJKH/ansible-role-git.svg?branch=master)](https://travis-ci.org/NINEJKH/ansible-role-git)
 
-# lifeofguenter.git
+# NINEJKH.git
 
 An Ansible role that installs git (from source) on Debian-like systems.
 
@@ -11,7 +11,7 @@ none
 ## Role Variables
 
 ```yaml
-git_version: 2.15.0
+git_version: 2.16.2
 ```
 
 ## Dependencies
@@ -24,7 +24,7 @@ none
 
 - hosts: git
   roles:
-    - { role: lifeofguenter.git }
+    - { role: NINEJKH.git }
 ```
 
 ## License
@@ -33,4 +33,4 @@ Licensed under the MIT License. See the [LICENSE file](LICENSE) for details.
 
 ## Author Information
 
-[Gunter Grodotzki](https://lifeofguenter.de)
+[9JKH (Pty) Ltd.](https://9jkh.co.za)
