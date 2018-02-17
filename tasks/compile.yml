@@ -34,7 +34,7 @@
     chdir: /tmp/git-{{ git_version }}
 
 - name: make
-  command: make prefix=/usr/local all
+  command: make -j{{ ansible_processor_vcpus }} prefix=/usr/local all
   args:
     chdir: /tmp/git-{{ git_version }}
 
