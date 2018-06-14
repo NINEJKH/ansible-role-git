@@ -27,7 +27,7 @@
   unarchive:
     src: https://www.kernel.org/pub/software/scm/git/git-{{ git_version }}.tar.gz
     dest: /tmp
-    remote_src: True
+    remote_src: yes
 
 - name: configure
   command: ./configure
