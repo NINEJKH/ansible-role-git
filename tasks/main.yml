@@ -6,4 +6,4 @@
   ignore_errors: yes
 
 - import_tasks: compile.yml
-  when: git_current.rc != 0 or not git_current.stdout | search(git_version_string_match)
+  when: git_current.rc != 0 or not git_current.stdout is search(git_version_string_match)
