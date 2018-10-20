@@ -11,7 +11,7 @@ none
 ## Role Variables
 
 ```yaml
-git_version: 2.19.0
+git_version: 2.19.1
 ```
 
 ## Dependencies

@@ -2,19 +2,20 @@
 
 - name: install dependencies
   apt:
-    name: "{{ item }}"
+    name: "{{ packages }}"
     state: present
     update_cache: yes
     cache_valid_time: 3600
-  with_items:
-    - make
-    - gcc
-    - libcurl4-openssl-dev
-    - libexpat1-dev
-    - gettext
-    - libz-dev
-    - libssl-dev
-    - perl-modules
+  vars:
+    packags:
+      - make
+      - gcc
+      - libcurl4-openssl-dev
+      - libexpat1-dev
+      - gettext
+      - libz-dev
+      - libssl-dev
+      - perl-modules
   become: yes
 
 - name: clear state
